@@ -7,7 +7,7 @@ The simple app that helps users with grocery shopping. It lets users organize th
 
 ## Live Site
 
-Demo View here [https://groceryassistance.herokuapp.com/] https://groceryassistance.herokuapp.com/
+Demo View here [https://groceryassistance.herokuapp.com/]
 
 
 
