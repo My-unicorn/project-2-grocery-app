@@ -1,0 +1,61 @@
+<div class="card">
+    <div id="main-title" class="text-center card-img-top">
+    {{!--<div class="jumbotron jumbotron-fluid text-center" id="header"> --}}
+
+        <h1 class="display-3" id="headertext">Grocery Assistance App!!!</h1>
+    </div>
+
+    <div class="card-body">
+        <h5 class="card-title text-center">Overview</h5>
+        <p>A grocery assistant that not only keeps track of whether items have been purchased or not but also locates the
+            closest supermarkets in your area.</p>
+
+    </div>
+</div>
+<div class=" container-fluid" id="lowerbody">
+    <h2 class="text-center" id="addburger">Add your Item</h2>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <form class="create-form text-center col-6 mb-4" id="post-grocery">
+
+                <div class="form-group">
+                    <label for="item" id="item-name">Item Name:</label>
+                    <input type="text" class="form-control" id="groceryitem" name="name">
+                </div>
+                <button type="submit" class="btn btn-primary" id="grocerybtn">Add</button>
+
+            </form>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-5 ml-5">
+                <div class="card mb-3">
+                    <h2 class="text-center card-title pt-3">Groceries to be purchased</h2>
+
+                    <ul class="list-group card-body pl-3">
+                        {{#each grocery}}
+                        {{#unless purchased}}
+                        {{> grocery/grocery-block purchased=true}}
+                        {{/unless}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-5 ml-3">
+                <div class="card mb-3">
+                    <h2 class="text-center card-title pt-3">Groceries purchased</h2>
+
+                    <ul class="list-group card-body pl-3">
+                        {{#each grocery}}
+                        {{#if purchased}}
+                        {{> grocery/grocery-block purchased=false}}
+                        {{/if}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
